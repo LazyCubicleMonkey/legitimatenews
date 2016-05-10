@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #cccccc;
+}
+html {
+  height: 100%;
+}
+body {
+  font: 100% Lucida Sans, Verdana;
+  margin: 20px;
+  line-height: 26px;
+  height: 100%;
+  margin-bottom: 1em;
+}
+li {
+  list-style: inside;
+  padding: 5px 4px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+li .articles {
+  text-align: left;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.container {
+  xmin-width: 900px;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -1em;
+}
+#top {
+  background-color: #b3b3b3;
+  color: #ffffff;
+  padding: 15px;
+}
+#top #bottom,
+#top .outer {
+  border-radius: 4px;
+  margin: 4px;
+}
+#title {
+  text-align: center;
+}
+#title,
+#menulist {
+  margin: 0;
+  padding: 0;
+}
+#menubar {
+  width: 15%;
+  float: left;
+}
+#main {
+  padding: 10px;
+  width: 70%;
+  float: left;
+}
+#sidebar {
+  background-color: #32a4e7;
+  color: #ffffff;
+  padding: 10px;
+  width: 15em;
+  float: right;
+}
+#footer {
+  position: fixed;
+  border: 1px solid #d4d4d4;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  font-size: 70%;
+  line-height: 1em;
+  height: 3em;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.inner {
+  list-style: inside;
+  font-weight: normal;
+  padding: 1px 1px 1px 10px;
+  border-bottom: 0;
+  white-space: nowrap;
+}
+.rightmenulist {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+}
+.outer {
+  background-color: #f1f1f1;
+  border: 1px solid #d4d4d4;
+  list-style-type: none;
+  padding: 2px;
+  cursor: pointer;
+}
+.outer:hover {
+  background-color: #ffffff;
+}
+.plain {
+  background-color: #f1f1f1;
+}
+#title,
+.outer,
+.headline {
+  text-transform: capitalize;
+}
+.headline {
+  padding: .5em;
+}
+.clearfix {
+  overflow: auto;
+}
+#picture {
+  float: left;
+  width: 450;
+  height: 336;
+}
+#maintext {
+  float: left;
+  margin-left: 1em;
+}
+@media (max-width: 800px) {
+  #sidebar {
+    width: auto;
+    float: none;
+  }
+  #main {
+    margin-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  #menubar {
+    width: auto;
+    float: none;
+  }
+  #main {
+    margin: 0;
+  }
+}

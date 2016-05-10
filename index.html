@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html><head>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="scripts/menuhider.js"></script>
+<link href="images/LZM.gif" TYPE="image/gif" REL="icon" />
+<title>Legitimate News</title>
+</head>
+<body>
+
+  <div class="wrapper" ng-app="">
+	<div id="top">
+    <h1 id="title">Legitimate News! The final resting spot of clickbait headlines!*</h1>
+	</div>
+    <div id="menubar">
+	{% for section in sections %}
+		<ul id="menulist">
+			<a class="plain" href="?section={{section.section}}">
+			<li id="{{section.section}}" class="outer menuitem">{{section.section}}
+			 <ul class="inner">
+			{% for story in section.stories %}
+				<li class="articles"><a href="?story={{story.filename}}">{{story.title}}</a></li>
+			{% endfor %}	
+			 </ul>            
+			</li></a>
+		</ul>
+	{% endfor %}	
+    </div>
+    <div id="main">
+	  {% if featureStory %}
+      <h1 class="headline">{{ featureStory.fullTitle }}</h1>
+	  <div id="clearfix">
+	  <img id="picture" src="{{featureStory.image}}"/>
+		<div id="maintext">
+			{{ featureStory.article }}
+		</div>
+	  </div>
+	  {% endif %}
+   </div>
+    <div id="sidebar">
+      <h3>Side-Bar</h3>
+	  {% for story in stories %}
+	  <ul class="rightmenulist">
+		<a href="?story={{story.filename}}"><li class="menuitem">{{story.title}}</li></a>
+	  </ul>
+	  {% endfor %}	
+    </div>
+  </div>  
+  <div id="footer">
+	*The real and less exciting news behind clickbait headlines.
+  </div>
+
+</body>
+</html>
+{% endautoescape %}
