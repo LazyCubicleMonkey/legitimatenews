@@ -3,7 +3,8 @@
 <html><head>
 <link rel="stylesheet" type="text/css" href="styles/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="https://use.fontawesome.com/11f9ca65cd.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script-->
 <script src="scripts/menuhider.js"></script>
 <link href="images/LZM.gif" TYPE="image/gif" REL="icon" />
 <title>Legitimate News</title>
@@ -31,6 +32,14 @@
     <div id="main">
 	  {% if featureStory %}
       <h1 class="headline">{{ featureStory.fullTitle }}</h1>
+	  <div class="search-container">
+		  <a id="search-switch" href="/search/"></a>
+          <form action="/search/" method="GET" id="search_form">
+            <input type="text" name="q" class="search" value="" placeholder="Search">
+            <input type="submit" value="" class="fa-search search">
+			<!--span class="fa-search"/-->
+          </form>
+	  </div>
 	  <div id="clearfix">
 	  <img id="picture" src="{{featureStory.image}}"/>
 		<div id="maintext">
@@ -40,7 +49,6 @@
 	  {% endif %}
    </div>
     <div id="sidebar">
-      <h3>Side-Bar</h3>
 	  {% for story in stories %}
 	  <ul class="rightmenulist">
 		<a href="?story={{story.filename}}"><li class="menuitem">{{story.title}}</li></a>

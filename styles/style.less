@@ -2,8 +2,9 @@
 @black-text:  #ffffff; //black
 @background:  #cccccc;
 @background-light: #f1f1f1;
-@menu-width: 15%;
-@main-width: 100%-(@menu-width * 2);
+@left-menu-width: 15%;
+@right-menu-width: 25%;
+@main-width: 100% - @left-menu-width - @right-menu-width;
 @footer-height: 1em;
 
 // Usage
@@ -74,7 +75,7 @@ a:hover {
 }
 
 #menubar {
-    width: @menu-width;
+    width: @left-menu-width;
     float: left;
 }
 
@@ -88,7 +89,7 @@ a:hover {
     background-color: #32a4e7;
     color: @black-text;
     padding: 10px;
-    width: 15em;
+    width: @right-menu-width;
 	float: right;
 }
 
@@ -136,8 +137,9 @@ a:hover {
 	background-color: @background-light;
 }
 
-#title, .outer, .headline {
+#title, .headline, .menuitem {
     text-transform: capitalize;
+    border-radius: 10px;
 }
 
 .headline {
@@ -152,6 +154,15 @@ a:hover {
   float: left;
   width: 450;
   height: 336;
+}
+
+.search-container {
+  float: right;
+}
+
+.search {
+  padding: 0px;
+  margin: 0px;
 }
 
 #maintext {

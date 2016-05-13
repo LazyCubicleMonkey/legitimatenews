@@ -62,14 +62,14 @@ a:hover {
 }
 #main {
   padding: 10px;
-  width: 70%;
+  width: 60%;
   float: left;
 }
 #sidebar {
   background-color: #32a4e7;
   color: #ffffff;
   padding: 10px;
-  width: 15em;
+  width: 25%;
   float: right;
 }
 #footer {
@@ -111,9 +111,10 @@ a:hover {
   background-color: #f1f1f1;
 }
 #title,
-.outer,
-.headline {
+.headline,
+.menuitem {
   text-transform: capitalize;
+  border-radius: 10px;
 }
 .headline {
   padding: .5em;
@@ -125,6 +126,13 @@ a:hover {
   float: left;
   width: 450;
   height: 336;
+}
+.search-container {
+  float: right;
+}
+.search {
+  padding: 0px;
+  margin: 0px;
 }
 #maintext {
   float: left;
