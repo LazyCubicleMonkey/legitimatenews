@@ -45,4 +45,15 @@ $( document ).ready(function() {
 	};
 	
 	$('.outer').mouseenter(enterHandler).mouseleave( exitHandler);
+
+	 $("#search_form").submit( function(eventObj) {
+	    var inputs = $('#search_form :input');
+	    var oldVal = inputs[0].value;
+	    inputs[0].value = "site:legitimatenews.com " + inputs[0].value;
+	    //Keeps the above part hidden from user
+	    setTimeout(function() {
+            inputs[0].value = oldVal;
+        }, 0);
+        return true;
+  });
 });

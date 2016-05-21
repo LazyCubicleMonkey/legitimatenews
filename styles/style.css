@@ -9,9 +9,11 @@ html {
 body {
   font: 100% Lucida Sans, Verdana;
   margin: 20px;
-  line-height: 26px;
+  line-height: 25px;
   height: 100%;
   margin-bottom: 1em;
+  width: 80%;
+  float: center;
 }
 li {
   list-style: inside;
@@ -62,14 +64,14 @@ a:hover {
 }
 #main {
   padding: 10px;
-  width: 60%;
+  width: 65%;
   float: left;
 }
 #sidebar {
   background-color: #32a4e7;
   color: #ffffff;
   padding: 10px;
-  width: 25%;
+  width: 20%;
   float: right;
 }
 #footer {
@@ -128,11 +130,17 @@ a:hover {
   height: 336;
 }
 .search-container {
-  float: right;
+  float: left;
+  width: 20%;
 }
-.search {
+.search-box {
   padding: 0px;
   margin: 0px;
+  width: 88%;
+}
+.search {
+  line-height: 150%;
+  width: 10%;
 }
 #maintext {
   float: left;

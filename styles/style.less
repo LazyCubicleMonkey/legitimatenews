@@ -3,9 +3,11 @@
 @background:  #cccccc;
 @background-light: #f1f1f1;
 @left-menu-width: 15%;
-@right-menu-width: 25%;
+@right-menu-width: 20%;
 @main-width: 100% - @left-menu-width - @right-menu-width;
 @footer-height: 1em;
+@line-height: 25px;
+@search-split: 10%;
 
 // Usage
 * {
@@ -20,9 +22,11 @@ html{
 body {
     font: 100% Lucida Sans, Verdana;
     margin: 20px;
-    line-height: 26px;
+    line-height: @line-height;
 	height: 100%;
 	margin-bottom: 1em;
+	width: 80%;
+	float: center;
 }
 
 li {
@@ -157,12 +161,19 @@ a:hover {
 }
 
 .search-container {
-  float: right;
+  float: left;
+  width: @right-menu-width;
+}
+
+.search-box {
+  padding: 0px;
+  margin: 0px;
+  width: 98% - @search-split;
 }
 
 .search {
-  padding: 0px;
-  margin: 0px;
+  line-height: 150%;
+  width: @search-split;
 }
 
 #maintext {
