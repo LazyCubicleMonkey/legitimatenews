@@ -6,7 +6,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<!--script src="https://use.fontawesome.com/11f9ca65cd.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script-->
-	<script src="scripts/menuhider.js"></script>
+	<script src="scripts/hover_functionality.js"></script>
 	<link href="images/LZM.gif" TYPE="image/gif" REL="icon" />
 	<title>Legitimate News</title>
 </head>
@@ -31,13 +31,32 @@
 		{% endfor %}
 	</div>
 	<div id="main">
-		{% if featureStory %}
-		<h1 class="headline">{{ featureStory.fullTitle }}</h1>
+		{% if feature_story %}
+		<h1 class="headline">{{ feature_story.fullTitle }}</h1>
 
 		<div id="clearfix">
-			<img id="picture" src="{{featureStory.image}}"/>
+			<img id="picture" src="{{feature_story.image}}"/>
+			{% if feature_story.claims %}
+			<div id="claims">
+				<h2>The Claims:</h2>
+				<ul>
+				{% for claim in feature_story.claims %}
+					<li class="menuitem"><a href="{{claim.link}}">{{ claim.title }}</a></li>
+				{% endfor %}
+				</ul>
+				<!--<h3><a href="{{ feature_story.source }}">The Source</a></h3>-->
+
+				<div class="comments">
+    				<h3><a href="#" class="btn">The Source</a></h3>
+    				<div class="comment-wrap">
+        				<iframe src="{{ feature_story.source }}"></iframe>
+    				</div>
+				</div>
+
+			</div>
+			{% endif %}
 			<div id="maintext">
-				{{ featureStory.article }}
+				{{ feature_story.article }}
 			</div>
 		</div>
 		{% endif %}

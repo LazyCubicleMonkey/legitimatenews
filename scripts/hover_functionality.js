@@ -44,9 +44,9 @@ $( document ).ready(function() {
 			comp.slideUp(speed);
 	};
 	
-	$('.outer').mouseenter(enterHandler).mouseleave( exitHandler);
+	$('.outer').mouseenter(enterHandler).mouseleave(exitHandler);
 
-	 $("#search_form").submit( function(eventObj) {
+	$("#search_form").submit( function(eventObj) {
 	    var inputs = $('#search_form :input');
 	    var oldVal = inputs[0].value;
 	    inputs[0].value = "site:legitimatenews.com " + inputs[0].value;
@@ -55,5 +55,18 @@ $( document ).ready(function() {
             inputs[0].value = oldVal;
         }, 0);
         return true;
-  });
+    });
+
+    var hover = function() {
+        if (!document.body.currentStyle) return;
+        var DIVcomments = document.getElementById('comments');
+        var DIVcomment_wrap = document.getElementById('comment-wrap');
+        DIVcomments.onmouseover = function() {
+            DIVcomment_wrap.style.display = 'block';
+        }
+        DIVcomments.onmouseout = function() {
+            DIVcomment_wrap.style.display = 'none';
+        }
+    }
+    window.onload = hover;
 });

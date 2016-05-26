@@ -13,7 +13,6 @@ body {
   height: 100%;
   margin-bottom: 1em;
   width: 80%;
-  float: center;
 }
 li {
   list-style: inside;
@@ -59,19 +58,20 @@ a:hover {
   padding: 0;
 }
 #menubar {
-  width: 15%;
+  width: 18%;
   float: left;
+  margin-top: 1em;
 }
 #main {
   padding: 10px;
-  width: 65%;
+  width: 57%;
   float: left;
 }
 #sidebar {
   background-color: #32a4e7;
   color: #ffffff;
   padding: 10px;
-  width: 20%;
+  width: 25%;
   float: right;
 }
 #footer {
@@ -119,19 +119,52 @@ a:hover {
   border-radius: 10px;
 }
 .headline {
-  padding: .5em;
+  padding: .2em 0em 0em .5em;
+  line-height: 35px;
 }
 .clearfix {
   overflow: auto;
 }
 #picture {
   float: left;
-  width: 450;
-  height: 336;
+  width: 225px;
+  height: 168px;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#claims {
+  margin-left: 1em;
+}
+#claims h3 {
+  margin-top: 1em;
+}
+#claims .comments {
+  background: #fff;
+}
+#claims iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+#claims .comment-wrap {
+  background: #fff;
+  position: relative;
+}
+#claims .comments .comment-wrap {
+  display: none;
+  z-index: 5;
+  padding: 10px;
+}
+#claims .comments:hover .comment-wrap {
+  display: block;
+}
+#maintext {
+  float: left;
+  margin-left: 1em;
 }
 .search-container {
   float: left;
-  width: 20%;
+  width: 25%;
 }
 .search-box {
   padding: 0px;
@@ -142,11 +175,10 @@ a:hover {
   line-height: 150%;
   width: 10%;
 }
-#maintext {
-  float: left;
-  margin-left: 1em;
-}
 @media (max-width: 800px) {
+  body {
+    width: 100%;
+  }
   #sidebar {
     width: auto;
     float: none;
@@ -156,6 +188,9 @@ a:hover {
   }
 }
 @media (max-width: 600px) {
+  body {
+    width: 100%;
+  }
   #menubar {
     width: auto;
     float: none;

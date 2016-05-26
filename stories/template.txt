@@ -1,0 +1,7 @@
+title
+fullTitle
+image url
+hype: optional (one line for each of the below)
+link claim
+source: required if hype filled in
+article content
