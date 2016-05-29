@@ -26,7 +26,8 @@
 						<li class="articles"><a href="?story={{story.filename}}">{{story.title}}</a></li>
 						{% endfor %}
 					</ul>
-				</li></a>
+				</li>
+			</a>
 		</ul>
 		{% endfor %}
 	</div>
@@ -46,10 +47,11 @@
 				</ul>
 				<!--<h3><a href="{{ feature_story.source }}">The Source</a></h3>-->
 
-				<div class="comments">
-    				<h3><a href="#" class="btn">The Source</a></h3>
-    				<div class="comment-wrap">
-        				<iframe src="{{ feature_story.source }}"></iframe>
+				<div id="source">
+    				<h3><a href="{{ feature_story.source }}" class="btn">The Source</a></h3>
+    				<div id="source-wrap" url="{{ feature_story.source }}">
+        				<!--<iframe src="{{ feature_story.source }}"></iframe>-->
+						<!--<iframe id="source_frame" url="{{ feature_story.source }}" src="#"></iframe>-->
     				</div>
 				</div>
 

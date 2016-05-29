@@ -49,7 +49,7 @@ $( document ).ready(function() {
 	$("#search_form").submit( function(eventObj) {
 	    var inputs = $('#search_form :input');
 	    var oldVal = inputs[0].value;
-	    inputs[0].value = "site:legitimatenews.com " + inputs[0].value;
+	    inputs[0].value = "site:" +  window.location.host + " " + inputs[0].value;
 	    //Keeps the above part hidden from user
 	    setTimeout(function() {
             inputs[0].value = oldVal;
@@ -57,16 +57,28 @@ $( document ).ready(function() {
         return true;
     });
 
-    var hover = function() {
-        if (!document.body.currentStyle) return;
-        var DIVcomments = document.getElementById('comments');
-        var DIVcomment_wrap = document.getElementById('comment-wrap');
-        DIVcomments.onmouseover = function() {
-            DIVcomment_wrap.style.display = 'block';
+    var sourceFrame;
+    var comments = $('#source');
+    comments.mouseenter(function() {
+        if(!sourceFrame) {
+            var frameWrapper = document.getElementById("source-wrap");
+            var iframeURL = frameWrapper.getAttribute("url");
+            sourceFrame = document.createElement('iframe');
+            sourceFrame.setAttribute("id", "source_frame");
+            sourceFrame.onload = function() {
+                var sourceWrapper = $("#source-wrap");
+                sourceFrame.style.visibility = "visible";
+                comments.hover(
+                    function () {
+                        sourceWrapper.show();
+                    },
+                    function () {
+                        sourceWrapper.hide();
+                    }
+                );
+            };
+            sourceFrame.src = iframeURL;
+            frameWrapper.appendChild(sourceFrame);
         }
-        DIVcomments.onmouseout = function() {
-            DIVcomment_wrap.style.display = 'none';
-        }
-    }
-    window.onload = hover;
+    });
 });
