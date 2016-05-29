@@ -42,11 +42,11 @@ class Story(object):
 		self.title = template.readline()
 		self.fullTitle = template.readline()
 		self.image = template.readline()
-		self.hype = template.readline()[:-1]
-		if self.hype == "hype:":
+		self.hype = template.readline()
+		if "hype:" in self.hype:
 			self.claims = []
 			line = template.readline()
-			while line[:-1] != "source:":
+			while "source:" not in line:
 				hype = Hype(line)
 				self.claims.append(hype)
 				line = template.readline()
